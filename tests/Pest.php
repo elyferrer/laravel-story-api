@@ -11,8 +11,10 @@
 |
 */
 
+use App\Models\Story;
+
 pest()->extend(Tests\TestCase::class)
- // ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
+ ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
     ->in('Feature');
 
 /*
@@ -44,4 +46,12 @@ expect()->extend('toBeOne', function () {
 function something()
 {
     // ..
+}
+
+function createStory(): Story
+{
+    return Story::factory()->create([
+        'title' => 'Test story for pest testing',
+        'synopsis' => 'Test synopsis for pest testing'
+    ]);
 }
