@@ -37,7 +37,7 @@ class StoryController extends Controller
             return response()->json(['message' => 'Error processing request'], 500);
         }
 
-        return response()->json($story, 201);
+        return response()->json($story, 200);
     }
 
     public function destroy(Story $story): JsonResponse
@@ -46,6 +46,6 @@ class StoryController extends Controller
             return response()->json(['message' => 'Error processing request'], 500);
         }
 
-        return response()->json(['message' => 'Record successfully deleted'], 201);
+        return response()->json(['message' => 'Record successfully deleted'], 200);
     }
 }
